@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (https://github.com/eclipse-ee4j/metro-jax-ws). RI's version is Eclipse Metro/2.4.8 (RELEASE-2.4.8-e044505; 2022-01-04T13:29:23+0000) JAXWS-RI/2.3.5 JAXWS-API/2.3.3 JAXB-RI/2.3.5 JAXB-API/2.3.3 git-revision#e044505. --><xs:schema xmlns:tns="http://capsule.corp/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://capsule.corp/">
+
+<xs:element name="URISyntaxException" type="tns:URISyntaxException"/>
+
+<xs:element name="crearPersonaje" type="tns:crearPersonaje"/>
+
+<xs:element name="crearPersonajeResponse" type="tns:crearPersonajeResponse"/>
+
+<xs:element name="obtenerPersonajePorNombre" type="tns:obtenerPersonajePorNombre"/>
+
+<xs:element name="obtenerPersonajePorNombreResponse" type="tns:obtenerPersonajePorNombreResponse"/>
+
+<xs:element name="obtenerTodosLosPersonajes" type="tns:obtenerTodosLosPersonajes"/>
+
+<xs:element name="obtenerTodosLosPersonajesResponse" type="tns:obtenerTodosLosPersonajesResponse"/>
+
+<xs:complexType name="obtenerTodosLosPersonajes">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="obtenerTodosLosPersonajesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:personaje" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="personaje">
+<xs:sequence>
+<xs:element name="nivelDePoder" type="xs:int"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="poder" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearPersonaje">
+<xs:sequence>
+<xs:element name="arg0" type="tns:personaje" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearPersonajeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="URISyntaxException">
+<xs:sequence>
+<xs:element name="index" type="xs:int"/>
+<xs:element name="input" type="xs:string" minOccurs="0"/>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+<xs:element name="reason" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenerPersonajePorNombre">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenerPersonajePorNombreResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:personaje" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
